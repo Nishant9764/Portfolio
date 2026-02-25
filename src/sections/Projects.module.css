@@ -1,0 +1,342 @@
+/* ============================================
+   PROJECTS — Sticky Card Stack
+   ============================================ */
+
+   .projects {
+    position: relative;
+    background: var(--bg-primary);
+    padding-bottom: 0;
+  }
+  
+  /* Subtle top fade so section blends into whatever is above */
+  .projects::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 120px;
+    background: linear-gradient(to bottom, var(--bg-primary), transparent);
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* ── Section Header ── */
+  .header {
+    padding: 100px 20px 72px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    /* No separate background — inherits from .projects */
+  }
+  
+  .labelRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, var(--accent-500), var(--accent-secondary-500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .progress {
+    width: 120px;
+    height: 2px;
+    background: var(--border-soft);
+    border-radius: 2px;
+    overflow: hidden;
+    transform-origin: left;
+  }
+  
+  .progressFill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-500), var(--accent-secondary-500));
+    transform-origin: left;
+    border-radius: 2px;
+  }
+  
+  .title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -2px;
+    margin: 0 0 12px;
+  }
+  
+  .subtitle {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--text-tertiary);
+    margin: 0;
+  }
+  
+  /* Decorative divider that ties header into the stack */
+  .headerDivider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 36px;
+  }
+  
+  .headerDivider::before,
+  .headerDivider::after {
+    content: "";
+    flex: 1;
+    max-width: 80px;
+    height: 1px;
+    background: var(--border-soft);
+  }
+  
+  .dividerDot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-500), var(--accent-secondary-500));
+    opacity: 0.7;
+  }
+  
+  /* ── Stack Container ── */
+  .stack {
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  /* ── Card ── */
+  .card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-lg);
+    will-change: transform, opacity;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    border-color: var(--border-strong);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Accent top bar */
+  .accentBar {
+    height: 3px;
+    width: 100%;
+  }
+  
+  /* Card body — horizontal split */
+  .cardBody {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 0;
+  }
+  
+  /* ── Left ── */
+  .cardLeft {
+    padding: 36px 32px;
+    border-right: 1px solid var(--border-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .cardMeta {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+  
+  .numBadge {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 700;
+    opacity: 0.8;
+  }
+  
+  .cardTitle {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    letter-spacing: -0.5px;
+  }
+  
+  .cardDesc {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+  
+  /* Highlights */
+  .highlights {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .highlightItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  
+  .check {
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  
+  /* ── Right ── */
+  .cardRight {
+    padding: 36px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: space-between;
+  }
+  
+  .techStack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .techBadge {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 5px 10px;
+    border: 1px solid;
+    border-radius: 6px;
+    background: transparent;
+    transition: background var(--transition-fast), transform var(--transition-fast);
+  }
+  
+  .techBadge:hover {
+    background: var(--glass-strong);
+    transform: translateY(-2px);
+  }
+  
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .linkBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: 1px solid var(--border-default);
+    border-radius: 10px;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    background: var(--glass);
+  }
+  
+  .linkBtn:hover {
+    border-color: var(--border-strong);
+    color: var(--text-primary);
+    transform: translateX(4px);
+    background: var(--glass-strong);
+  }
+  
+  .linkBtnPrimary {
+    font-weight: 700;
+  }
+  
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .header {
+      padding: 80px 16px 48px;
+    }
+  
+    .stack {
+      padding: 0 12px;
+    }
+  
+    .cardBody {
+      grid-template-columns: 1fr;
+    }
+  
+    .cardLeft {
+      border-right: none;
+      border-bottom: 1px solid var(--border-soft);
+      padding: 28px 24px;
+    }
+  
+    .cardRight {
+      padding: 24px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+  
+    .techStack {
+      flex: 1;
+    }
+  
+    .links {
+      flex-direction: row;
+      flex-wrap: wrap;
+      min-width: 100%;
+    }
+  
+    .linkBtn {
+      flex: 1;
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .title {
+      font-size: 2rem;
+      letter-spacing: -1px;
+    }
+  
+    .cardTitle {
+      font-size: 1.25rem;
+    }
+  
+    .cardBody {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Light mode */
+  .light .card {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .light .card:hover {
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
+  }

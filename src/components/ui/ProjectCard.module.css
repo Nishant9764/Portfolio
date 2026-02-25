@@ -1,0 +1,54 @@
+.card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+}
+
+.card:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-muted);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.header h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.description {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.links {
+  margin-top: auto;
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.links a {
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.links a:hover {
+  color: var(--accent-500);
+}

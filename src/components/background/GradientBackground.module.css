@@ -1,0 +1,161 @@
+.wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+/* Base blob styling */
+.blob1,
+.blob2,
+.blob3 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(180px);
+  opacity: 0;
+  animation: float 15s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+/* Primary teal accent - top left */
+.blob1 {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, var(--accent-500) 0%, var(--accent-600) 100%);
+  top: -250px;
+  left: -250px;
+  opacity: 0.25;
+  animation: float-teal 18s ease-in-out infinite;
+}
+
+/* Secondary violet accent - bottom right */
+.blob2 {
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, var(--accent-secondary-500) 0%, var(--accent-secondary-600) 100%);
+  bottom: -200px;
+  right: -200px;
+  opacity: 0.20;
+  animation: float-violet 20s ease-in-out infinite;
+}
+
+/* Tertiary glow - center accent */
+.blob3 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--accent-400) 0%, var(--accent-secondary-400) 100%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.12;
+  animation: float-center 22s ease-in-out infinite;
+}
+
+/* Gradient overlay for premium feel */
+.gradientOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(15, 23, 42, 0.05) 50%,
+    rgba(15, 23, 42, 0.1) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Teal blob animation - subtle horizontal */
+@keyframes float-teal {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px);
+  }
+  25% { 
+    transform: translateY(-40px) translateX(20px);
+  }
+  50% { 
+    transform: translateY(-60px) translateX(0px);
+  }
+  75% { 
+    transform: translateY(-20px) translateX(-30px);
+  }
+}
+
+/* Violet blob animation - opposite direction */
+@keyframes float-violet {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px);
+  }
+  25% { 
+    transform: translateY(50px) translateX(-30px);
+  }
+  50% { 
+    transform: translateY(80px) translateX(0px);
+  }
+  75% { 
+    transform: translateY(30px) translateX(25px);
+  }
+}
+
+/* Center blob animation - gentle pulse-like movement */
+@keyframes float-center {
+  0%, 100% { 
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% { 
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .blob1 {
+    width: 400px;
+    height: 400px;
+    top: -150px;
+    left: -150px;
+  }
+
+  .blob2 {
+    width: 350px;
+    height: 350px;
+    bottom: -100px;
+    right: -100px;
+  }
+
+  .blob3 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .gradientOverlay {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(15, 23, 42, 0.08) 50%,
+      rgba(15, 23, 42, 0.15) 100%
+    );
+  }
+}
+
+@media (max-width: 480px) {
+  .blob1 {
+    width: 250px;
+    height: 250px;
+    top: -100px;
+    left: -100px;
+  }
+
+  .blob2 {
+    width: 200px;
+    height: 200px;
+    bottom: -50px;
+    right: -50px;
+  }
+
+  .blob3 {
+    width: 150px;
+    height: 150px;
+  }
+}

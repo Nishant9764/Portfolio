@@ -1,0 +1,754 @@
+/* ============================================================
+   CONTACT SECTION — Cinematic Panda Delivery Edition
+   ============================================================ */
+
+   .contact {
+    position: relative;
+    padding: 120px 20px 100px;
+    overflow: hidden;
+    background: var(--bg-primary);
+    min-height: 100vh;
+  }
+  
+  /* ── Ambient Background ── */
+  .bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .glow1 {
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 50vw;
+    height: 50vw;
+    max-width: 600px;
+    max-height: 600px;
+    background: radial-gradient(circle, rgba(20, 184, 166, 0.06) 0%, transparent 60%);
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: floatSlow 18s ease-in-out infinite alternate;
+  }
+  .glow2 {
+    position: absolute;
+    bottom: 0%;
+    left: -10%;
+    width: 40vw;
+    height: 40vw;
+    max-width: 500px;
+    max-height: 500px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.04) 0%, transparent 60%);
+    border-radius: 50%;
+    filter: blur(70px);
+    animation: floatSlow 22s ease-in-out infinite alternate-reverse;
+  }
+  @keyframes floatSlow {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(2vw, 3vh); }
+  }
+  
+  /* ── Container ── */
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1160px;
+    margin: 0 auto;
+  }
+  
+  /* ── Header ── */
+  .header {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+  .labelRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .labelDash {
+    width: 40px;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, var(--accent-500));
+  }
+  .labelDash:last-child {
+    background: linear-gradient(90deg, var(--accent-500), transparent);
+  }
+  .label {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, var(--accent-500), var(--accent-secondary-500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .title {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: var(--text-primary);
+    margin: 0 0 16px;
+    line-height: 1.1;
+  }
+  .accent {
+    background: linear-gradient(135deg, var(--accent-500), var(--accent-secondary-500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .subtitle {
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  
+  /* ── 2-col grid ── */
+  .grid2col {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  
+  /* ── Sidebar ── */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .sidebarHeading {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin: 0 0 4px;
+  }
+  
+  /* ── Social Cards ── */
+  .socialList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .socialCard {
+    display: grid;
+    grid-template-columns: 48px 1fr 22px;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: 16px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(.2, .8, .2, 1);
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+  .socialCard:hover {
+    background: var(--glass-strong);
+    border-color: var(--card-color, var(--border-accent));
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  }
+  .socialIcon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--glass-strong);
+    border: 1px solid;
+    border-radius: 12px;
+  }
+  .socialIcon svg { width: 22px; height: 22px; }
+  .socialInfo { overflow: hidden; }
+  .socialLabel {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-secondary);
+    margin: 0 0 4px;
+  }
+  .socialValue {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .arrow {
+    width: 18px;
+    height: 18px;
+    color: var(--text-tertiary);
+    transition: transform 0.3s cubic-bezier(.2, .8, .2, 1), color 0.3s;
+  }
+  .socialCard:hover .arrow {
+    transform: translateX(4px);
+    color: var(--accent-500);
+  }
+  
+  /* ── Availability badge ── */
+  .availBadge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    background: rgba(16, 185, 129, 0.06);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 14px;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-top: 8px;
+  }
+  .availDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+    animation: pulseGreen 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    flex-shrink: 0;
+  }
+  @keyframes pulseGreen {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25); }
+    50%       { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0.05); }
+  }
+  
+  /* ── Form Side Panel ── */
+  .formSide {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: 24px;
+    overflow: hidden;
+    min-height: 560px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+  }
+  
+  /* ── Form ── */
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 40px;
+    flex: 1;
+  }
+  .formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .formLabel {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  .formInput,
+  .formTextarea {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    padding: 14px 18px;
+    background: var(--bg-primary);
+    border: 1.5px solid var(--border-default);
+    border-radius: 12px;
+    color: var(--text-primary);
+    transition: all 0.3s;
+    outline: none;
+    resize: none;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .formInput:focus,
+  .formTextarea:focus {
+    border-color: var(--accent-500);
+    box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15), inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: var(--bg-surface);
+  }
+  .formInput:disabled,
+  .formTextarea:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  .formInput::placeholder,
+  .formTextarea::placeholder {
+    color: var(--text-tertiary);
+    font-weight: 400;
+  }
+  .submitBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 36px;
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 14px;
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s cubic-bezier(.2, .8, .2, 1), box-shadow 0.3s;
+    align-self: flex-start;
+    min-width: 220px;
+    margin-top: 8px;
+  }
+  .submitBtn:hover:not(:disabled) {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(255, 255, 255, 0.15);
+  }
+  .submitLoading {
+    background: var(--border-default);
+    color: var(--text-secondary);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  .premiumLoader {
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-left-color: currentColor;
+    border-radius: 50%;
+    animation: spinner 0.8s linear infinite;
+  }
+  @keyframes spinner { to { transform: rotate(360deg); } }
+  .errorBanner {
+    padding: 14px 20px;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 12px;
+    color: #ef4444;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  /* ── Cinema Container (wraps cinematic animation, absolute fill) ── */
+  .cinemaContainer {
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+  
+  /* ══════════════════════════════════════════════════════════════
+     CINEMATIC ANIMATION STAGE
+  ══════════════════════════════════════════════════════════════ */
+  .cinemaStage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 560px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* ── Backgrounds ── */
+  .cineBgBase {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 40% 60%, #0e1a2e 0%, #070c16 70%);
+    z-index: 0;
+  }
+  .cineBgSpace {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 20%, #0a1628 0%, #020508 80%);
+    z-index: 1;
+  }
+  
+  /* ── Stars ── */
+  .starsLayer {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .starField {
+    position: absolute;
+    inset: 0;
+  }
+  .star {
+    position: absolute;
+    border-radius: 50%;
+    background: #fff;
+  }
+  
+  /* ── City skyline (CSS-only, bottom strip) ── */
+  .citySkyline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    z-index: 3;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 70'%3E%3Crect x='0' y='40' width='800' height='30' fill='%230a1628'/%3E%3Crect x='20' y='20' width='18' height='50' fill='%230a1628'/%3E%3Crect x='50' y='30' width='14' height='40' fill='%230a1628'/%3E%3Crect x='72' y='10' width='22' height='60' fill='%230a1628'/%3E%3Crect x='105' y='25' width='16' height='45' fill='%230a1628'/%3E%3Crect x='130' y='5' width='28' height='65' fill='%230a1628'/%3E%3Crect x='168' y='22' width='12' height='48' fill='%230a1628'/%3E%3Crect x='190' y='35' width='20' height='35' fill='%230a1628'/%3E%3Crect x='220' y='15' width='16' height='55' fill='%230a1628'/%3E%3Crect x='248' y='30' width='14' height='40' fill='%230a1628'/%3E%3Crect x='274' y='8' width='24' height='62' fill='%230a1628'/%3E%3Crect x='310' y='28' width='12' height='42' fill='%230a1628'/%3E%3Crect x='335' y='18' width='30' height='52' fill='%230a1628'/%3E%3Crect x='378' y='35' width='16' height='35' fill='%230a1628'/%3E%3Crect x='406' y='12' width='20' height='58' fill='%230a1628'/%3E%3Crect x='438' y='26' width='18' height='44' fill='%230a1628'/%3E%3Crect x='468' y='4' width='26' height='66' fill='%230a1628'/%3E%3Crect x='506' y='22' width='14' height='48' fill='%230a1628'/%3E%3Crect x='530' y='32' width='20' height='38' fill='%230a1628'/%3E%3Crect x='562' y='14' width='16' height='56' fill='%230a1628'/%3E%3Crect x='590' y='28' width='22' height='42' fill='%230a1628'/%3E%3Crect x='624' y='6' width='28' height='64' fill='%230a1628'/%3E%3Crect x='664' y='24' width='14' height='46' fill='%230a1628'/%3E%3Crect x='690' y='36' width='18' height='34' fill='%230a1628'/%3E%3Crect x='718' y='16' width='22' height='54' fill='%230a1628'/%3E%3Crect x='752' y='30' width='16' height='40' fill='%230a1628'/%3E%3Crect x='776' y='20' width='20' height='50' fill='%230a1628'/%3E%3C/svg%3E");
+    background-position: bottom center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+  }
+  
+  /* ── Shared: center stage wrapper ── */
+  .cineCenter {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    z-index: 10;
+  }
+  
+  /* ─────────────────────
+     PAPER / FOLDING
+  ───────────────────── */
+  .perspBox {
+    perspective: 600px;
+    perspective-origin: 50% 50%;
+  }
+  .paper3d {
+    transform-style: preserve-3d;
+    filter: drop-shadow(0 12px 40px rgba(0, 0, 0, 0.5));
+  }
+  .foldHint {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #14b8a6;
+  }
+  .foldDots {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+  .foldDots span {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #14b8a6;
+  }
+  
+  /* ─────────────────────
+     PANDA PICKUP SCENE
+  ───────────────────── */
+  .pandaPickupScene {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  .flyEnvelope {
+    position: absolute;
+    left: calc(50% - 180px);
+    top: calc(50% - 20px);
+    z-index: 12;
+    filter: drop-shadow(0 8px 24px rgba(20, 184, 166, 0.4));
+  }
+  .pandaHeroWrap {
+    position: absolute;
+    right: calc(50% - 180px);
+    bottom: 30px;
+    z-index: 11;
+  }
+  .pandaHeroImg {
+    width: 180px;
+    height: auto;
+    /* mix-blend-mode: screen removes the black background on dark stages */
+    mix-blend-mode: screen;
+    filter: brightness(1.05) contrast(1.05);
+    display: block;
+  }
+  
+  /* ─────────────────────
+     LAUNCH SCENE
+  ───────────────────── */
+  .launchScene {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 10;
+    padding-bottom: 40px;
+  }
+  .rocketTrail {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(20, 184, 166, 0.08) 20%,
+      rgba(14, 165, 233, 0.25) 50%,
+      rgba(251, 191, 36, 0.6) 80%,
+      rgba(239, 68, 68, 0.8) 100%
+    );
+    border-radius: 50% 50% 0 0;
+    filter: blur(12px);
+    z-index: 9;
+  }
+  .launchPandaWrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 11;
+  }
+  .launchGlow {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(251, 191, 36, 0.9) 0%, rgba(239, 68, 68, 0.6) 50%, transparent 80%);
+    filter: blur(10px);
+    z-index: 10;
+  }
+  .heldEnvelope {
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    z-index: 13;
+    filter: drop-shadow(0 4px 12px rgba(20, 184, 166, 0.5));
+  }
+  .pandaLaunchImg {
+    width: 160px;
+    height: auto;
+    mix-blend-mode: screen;
+    filter: brightness(1.1);
+    display: block;
+    position: relative;
+    z-index: 12;
+  }
+  
+  /* ─────────────────────
+     SPACE SCENE
+  ───────────────────── */
+  .spaceScene {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+  }
+  
+  /* Satellite — top center */
+  .satArea {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Tiny panda near satellite */
+  .pandaTinyWrap {
+    position: absolute;
+    top: 80px;
+    left: calc(50% - 60px);
+  }
+  .pandaMicroImg {
+    width: 160px;
+    height: auto;
+    mix-blend-mode: screen;
+    display: block;
+  }
+  .tinyEnvelope {
+    position: absolute;
+    top: 12px;
+    right: -8px;
+    filter: drop-shadow(0 2px 8px rgba(20, 184, 166, 0.4));
+  }
+  
+  /* Transmission arc SVG overlay */
+  .arcSvg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 11;
+  }
+  
+  /* Earth — bottom right */
+  .earthArea {
+    position: absolute;
+    bottom: 50px;
+    right: 40px;
+  }
+  .bangaloreTag {
+    position: absolute;
+    bottom: -26px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #14b8a6;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 12px rgba(20, 184, 166, 0.6);
+  }
+  
+  /* ─────────────────────
+     STATUS BAR
+  ───────────────────── */
+  .statusBar {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    z-index: 20;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.6);
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 7px 18px;
+    border-radius: 100px;
+    backdrop-filter: blur(8px);
+    white-space: nowrap;
+  }
+  .statusPulse {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #14b8a6;
+    box-shadow: 0 0 6px #14b8a6;
+    flex-shrink: 0;
+  }
+  
+  /* ══════════════════════════════════════════════════════════════
+     SUCCESS STATE
+  ══════════════════════════════════════════════════════════════ */
+  .successState {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+    padding: 48px;
+    background: var(--bg-surface);
+  }
+  .successHeading {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: 0;
+    letter-spacing: -0.5px;
+  }
+  .successText {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0;
+    max-width: 380px;
+    line-height: 1.7;
+  }
+  .resetBtn {
+    margin-top: 16px;
+    padding: 14px 32px;
+    background: transparent;
+    border: 1.5px solid var(--border-default);
+    border-radius: 12px;
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .resetBtn:hover {
+    border-color: var(--accent-500);
+    color: var(--accent-500);
+    background: var(--glass);
+  }
+  
+  /* ══════════════════════════════════════════════════════════════
+     RESPONSIVE
+  ══════════════════════════════════════════════════════════════ */
+  @media (max-width: 960px) {
+    .grid2col {
+      grid-template-columns: 1fr;
+    }
+    .sidebar {
+      order: 2;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .sidebarHeading { width: 100%; }
+    .socialList {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 10px;
+      width: 100%;
+    }
+    .socialCard { flex: 1; min-width: 250px; }
+    .formSide { order: 1; }
+  }
+  
+  @media (max-width: 640px) {
+    .contact { padding: 80px 16px 60px; }
+    .title { font-size: 2.2rem; }
+    .form { padding: 24px; }
+    .formRow { grid-template-columns: 1fr; }
+    .submitBtn { align-self: stretch; }
+    .socialList { flex-direction: column; }
+    .successState { padding: 32px 20px; }
+    .pandaHeroImg { width: 140px; }
+    .statusBar { font-size: 0.68rem; padding: 6px 14px; }
+  }

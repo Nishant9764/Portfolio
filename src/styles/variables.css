@@ -1,0 +1,168 @@
+:root {
+  /* Layout + motion */
+  --max-width: 1200px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --elevation-1: 0 6px 18px rgba(2, 6, 23, 0.35);
+  --transition-fast: 180ms;
+  --transition-smooth: 320ms cubic-bezier(.2, .9, .3, 1);
+
+  /* Typography */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-display: 'Syne', 'Inter', ui-sans-serif, system-ui;
+  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+
+  /* UI sizing */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 20px;
+  --space-lg: 32px;
+}
+
+/* ========== DARK THEME (Premium) ========== */
+.dark {
+  /* Base layers - sophisticated depth */
+  --bg-primary: #09111f;
+  /* Ultra-deep navy - pure, premium feel */
+  --bg-surface: #0f1a2e;
+  /* Elevated surface with warmth */
+  --bg-muted: #131f34;
+  /* Mid-tone for sections */
+  --bg-overlay: rgba(9, 17, 31, 0.7);
+
+  /* Glass/Frosted effect - refined */
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-strong: rgba(255, 255, 255, 0.08);
+
+  /* Text hierarchy - precision contrast */
+  --text-primary: #f0f4f9;
+  /* Soft white, not harsh */
+  --text-secondary: #a8b5c8;
+  /* Refined muted */
+  --text-tertiary: #7a8597;
+  /* Deeper muted for captions */
+
+  /* Primary accent - Modern teal-cyan */
+  --accent-50: #f0fdfa;
+  --accent-100: #ccfbf1;
+  --accent-400: #2dd4bf;
+  --accent-500: #14b8a6;
+  /* Rich teal - primary */
+  --accent-600: #0d9488;
+  --accent-700: #0f766e;
+
+  /* Secondary accent - Sophisticated violet */
+  --accent-secondary-400: #d8b4fe;
+  --accent-secondary-500: #c084fc;
+  --accent-secondary-600: #a855f7;
+
+  /* Status colors - professional palette */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #3b82f6;
+
+  /* Gradients - premium feel */
+  --accent-gradient: linear-gradient(135deg, rgba(20, 184, 166, 0.16), rgba(168, 85, 247, 0.12));
+  --accent-gradient-strong: linear-gradient(135deg, rgba(20, 184, 166, 0.24), rgba(168, 85, 247, 0.18));
+  --glow-accent: rgba(20, 184, 166, 0.15);
+  --glow-secondary: rgba(168, 85, 247, 0.12);
+
+  /* Borders - refined system */
+  --border-soft: rgba(255, 255, 255, 0.06);
+  --border-default: rgba(255, 255, 255, 0.10);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --border-accent: rgba(20, 184, 166, 0.3);
+
+  /* Special effects */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.32);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.40);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.48);
+}
+
+/* ========== LIGHT THEME (Premium) ========== */
+.light {
+  /* Base layers - clean, professional */
+  --bg-primary: #ffffff;
+  /* Pure white */
+  --bg-surface: #f8fafc;
+  /* Soft gray for surfaces */
+  --bg-muted: #f1f5f9;
+  /* Light gray for sections */
+  --bg-overlay: rgba(248, 250, 252, 0.95);
+
+  /* Glass/Frosted effect */
+  --glass: rgba(15, 23, 42, 0.03);
+  --glass-strong: rgba(15, 23, 42, 0.06);
+
+  /* Text hierarchy - accessible contrast */
+  --text-primary: #0f172a;
+  /* Deep navy-black */
+  --text-secondary: #475569;
+  /* Refined gray */
+  --text-tertiary: #94a3b8;
+  /* Lighter gray for captions */
+
+  /* Primary accent - Teal-cyan (same family as dark) */
+  --accent-50: #f0fdfa;
+  --accent-100: #ccfbf1;
+  --accent-400: #2dd4bf;
+  --accent-500: #0d9488;
+  /* Darker teal for better contrast */
+  --accent-600: #0f766e;
+  --accent-700: #115e59;
+
+  /* Secondary accent - Sophisticated violet */
+  --accent-secondary-400: #c084fc;
+  --accent-secondary-500: #a855f7;
+  --accent-secondary-600: #9333ea;
+
+  /* Status colors - professional palette */
+  --success: #059669;
+  --warning: #d97706;
+  --error: #dc2626;
+  --info: #2563eb;
+
+  /* Gradients - more vibrant on light background */
+  --accent-gradient: linear-gradient(135deg, rgba(13, 148, 136, 0.12), rgba(168, 85, 247, 0.10));
+  --accent-gradient-strong: linear-gradient(135deg, rgba(13, 148, 136, 0.20), rgba(168, 85, 247, 0.16));
+  --glow-accent: rgba(13, 148, 136, 0.12);
+  --glow-secondary: rgba(168, 85, 247, 0.08);
+
+  /* Borders - clean system */
+  --border-soft: rgba(15, 23, 42, 0.08);
+  --border-default: rgba(15, 23, 42, 0.12);
+  --border-strong: rgba(15, 23, 42, 0.18);
+  --border-accent: rgba(13, 148, 136, 0.3);
+
+  /* Special effects */
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.10);
+  --shadow-lg: 0 16px 48px rgba(15, 23, 42, 0.14);
+}
+
+/* ========== SEMANTIC COLOR TOKENS ========== */
+.dark,
+.light {
+  /* Interactive states */
+  --hover-opacity: 0.85;
+  --active-opacity: 0.95;
+  --disabled-opacity: 0.5;
+
+  /* Common semantic colors */
+  --color-bg-brand: var(--accent-500);
+  --color-text-brand: var(--accent-50);
+  --color-border-brand: var(--border-accent);
+}
+
+/* ========== UTILITY: Focus states ========== */
+.dark {
+  --focus-ring: 0 0 0 3px var(--bg-primary), 0 0 0 6px var(--accent-500);
+}
+
+.light {
+  --focus-ring: 0 0 0 3px var(--bg-primary), 0 0 0 6px var(--accent-600);
+}
